@@ -17,6 +17,12 @@ public class App {
 
         try {
             String domain = args[0];
+
+            // strip the last /
+            if (domain.charAt(domain.length() - 1) == '/') {
+                domain = domain.substring(0, domain.length() - 1);
+            }
+
             String startPage = args[1];
             if (args.length > 2 && args[2] != null) {
                 maxThreads = Integer.parseInt(args[2]);
